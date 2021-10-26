@@ -3,7 +3,7 @@
 
 using namespace std;
 
-namespace LifeHash {
+namespace Hello {
 
 string byte_to_hex(uint8_t byte) {
     auto hex = "0123456789abcdef";

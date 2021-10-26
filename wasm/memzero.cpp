@@ -48,7 +48,7 @@
 // Adapted from
 // https://github.com/jedisct1/libsodium/blob/1647f0d53ae0e370378a9195477e3df0a792408f/src/libsodium/sodium/utils.c#L102-L130
 
-namespace LifeHash
+namespace Hello
 {
 
 void memzero(void *const pnt, const size_t len) {
@@ -86,4 +86,4 @@ void memzero(void *const pnt, const size_t len) {
 #endif
 }
 
-} // namespace LifeHash
+} // namespace Hello

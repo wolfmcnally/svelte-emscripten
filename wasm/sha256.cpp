@@ -35,7 +35,7 @@
 
 #include "memzero.hpp"
 
-namespace LifeHash
+namespace Hello
 {
 
 /*** SHA-256/384/512 Machine Architecture Definitions *****************/
@@ -369,4 +369,4 @@ const Data sha256(const Data& buf) {
     return Data(digest, digest + SHA256_DIGEST_LENGTH);
 }
 
-} // namespace LifeHash
+} // namespace Hello

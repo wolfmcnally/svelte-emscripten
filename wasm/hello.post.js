@@ -3,15 +3,15 @@
 Module['onRuntimeInitialized'] = function () {
     Module['free'] = cwrap('free', null, ['number']);
     Module['malloc'] = cwrap('malloc', 'number', ['number']);
-    Module['int_sqrt'] = cwrap('int_sqrt', 'number', ['number']);
+    Module['intSqrt'] = cwrap('int_sqrt', 'number', ['number']);
     Module['add'] = cwrap('add', 'number', ['number', 'number']);
-    Module['print_u8'] = cwrap('print_u8', null, ['number']);
-    Module['increment_u8'] = cwrap('increment_u8', 'number', ['number']);
-    Module['print_u16'] = cwrap('print_u16', null, ['number']);
-    Module['print_u8_array'] = function(a) {
+    Module['printU8'] = cwrap('print_u8', null, ['number']);
+    Module['incrementU8'] = cwrap('increment_u8', 'number', ['number']);
+    Module['printU16'] = cwrap('print_u16', null, ['number']);
+    Module['printU8Array'] = function(a) {
         ccall('print_u8_array', null, ['array', 'number'], [a, a.length]);
     };
-    Module['return_string'] = function() {
+    Module['returnString'] = function() {
         const ptr = ccall('return_string', 'number', []);
         const result = UTF8ToString(ptr);
         this.free(ptr);
@@ -45,7 +45,7 @@ Module['onRuntimeInitialized'] = function () {
         this.free(outputPtr);
         return o;
     };
-    Module['data_to_hex'] = function(data) {
+    Module['dataToHex'] = function(data) {
         const inputPtr = this.malloc(data.length);
         const i = new Uint8Array(HEAPU8.buffer, inputPtr, data.length);
         i.set(data);
@@ -55,7 +55,7 @@ Module['onRuntimeInitialized'] = function () {
         this.free(outputPtr);
         return result;
     };
-    Module['hex_to_data'] = function(hex) {
+    Module['hexToData'] = function(hex) {
         const utf8 = new TextEncoder().encode(hex);
         const inputPtr = this.malloc(utf8.length);
         const i = new Uint8Array(HEAPU8.buffer, inputPtr, utf8.length);

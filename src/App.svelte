@@ -5,9 +5,8 @@
 </script>
 
 <main>
+  <h1>{message}</h1>
   <HelloTest bind:message />
-
-  <p>{message}</p>
 </main>
 
 <style>
@@ -20,17 +19,5 @@
     text-align: center;
     padding: 1em;
     margin: 0 auto;
-  }
-
-  p {
-    max-width: 14rem;
-    margin: 1rem auto;
-    line-height: 1.35;
-  }
-
-  @media (min-width: 480px) {
-    p {
-      max-width: none;
-    }
   }
 </style>

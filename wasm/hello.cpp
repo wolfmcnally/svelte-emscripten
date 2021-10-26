@@ -58,13 +58,13 @@ void reverse(int32_t* p, size_t len) {
 
 EMSCRIPTEN_KEEPALIVE
 void sha256(const uint8_t* data, size_t len, uint8_t digest[SHA256_DIGEST_LENGTH]) {
-    LifeHash::sha256_Raw(data, len, digest);
+    Hello::sha256_Raw(data, len, digest);
 }
 
 EMSCRIPTEN_KEEPALIVE
 char* data_to_hex(const uint8_t* data, size_t len) {
-    auto d = LifeHash::Data(data, data + len);
-    auto hex = LifeHash::data_to_hex(d);
+    auto d = Hello::Data(data, data + len);
+    auto hex = Hello::data_to_hex(d);
     auto str = (char*)malloc(hex.length() + 1);
     strcpy(str, hex.c_str());
     return str;
@@ -74,7 +74,7 @@ EMSCRIPTEN_KEEPALIVE
 bool hex_to_data(const uint8_t* utf8, size_t utf8_len, uint8_t** out, size_t* out_len) {
     try {
         auto hex = std::string(utf8, utf8 + utf8_len);
-        auto data = LifeHash::hex_to_data(hex);
+        auto data = Hello::hex_to_data(hex);
         auto buf = (uint8_t*)malloc(data.size());
         memcpy(buf, &data[0], data.size());
         *out = buf;

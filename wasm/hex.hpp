@@ -4,7 +4,7 @@
 #include "data.hpp"
 #include <string>
 
-namespace LifeHash {
+namespace Hello {
 
 std::string data_to_hex(const Data& in);
 Data hex_to_data(const std::string& hex);

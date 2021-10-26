@@ -28,15 +28,15 @@
  * SUCH DAMAGE.
  */
 
-#ifndef LIFEHASH_SHA_256_HPP
-#define LIFEHASH_SHA_256_HPP
+#ifndef HELLO_SHA_256_HPP
+#define HELLO_SHA_256_HPP
 
 #include <stddef.h>
 #include <stdint.h>
 
 #include "data.hpp"
 
-namespace LifeHash
+namespace Hello
 {
 
 #define SHA256_BLOCK_LENGTH 64
@@ -81,6 +81,6 @@ char* sha256_Data(const uint8_t*, size_t, char[SHA256_DIGEST_STRING_LENGTH]);
 // Calculates the SHA256 digest of the given data.
 const Data sha256(const Data& buf);
 
-} // namespace LifeHash
+} // namespace Hello
 
 #endif
